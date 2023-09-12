@@ -1,0 +1,159 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const contacts = [
+  {
+    title: "linkdin",
+    icon: "in.svg",
+    link: "https://www.linkedin.com/in/hassan-soleimaneahary-595154151/",
+  },
+  { title: "instagram", icon: "instagram.svg", link: "https://www.instagram.com/hassan_ahari/" },
+  { title: "github", icon: "github.svg", link: "https://github.com/HassanAhari/" },
+  { title: "watch app", icon: "whatsapp.svg", link: "https://wa.me/989053768057/" },
+];
+
+const services = [
+  { title: "Vue.js", icon: "vue.svg", desc: "" },
+  { title: "Vuetify", icon: "vuetify.svg", desc: "" },
+  { title: "Tailwind css", icon: "tailwind.svg", desc: "" },
+  { title: "Python", icon: "python.svg", desc: "" },
+  { title: "Django", icon: "dj.svg", desc: "" },
+  { title: "Postgresql", icon: "postgres.svg", desc: "" },
+  { title: "MongoDB", icon: "mongo.png", desc: "" },
+  { title: "Docker", icon: "docker.svg", desc: "" },
+  { title: "Git", icon: "git.svg", desc: "" },
+];
+---
+
+<Layout title="Hassan Ahari">
+  <main>
+    <div
+      class="fixed top-0 left-0 right-0 flex items-center justify-center h-16 bg-natural z-10"
+    >
+      <img src="/logo.png" width="96" height="54" alt="ahari" />
+    </div>
+    <div
+      class="snap-y snap-mandatory overflow-scroll h-screen scroll-smooth"
+      id="content"
+    >
+      <div
+        class="flex flex-col h-screen justify-center items-center snap-center"
+      >
+        <div>
+          <div class="text-center">
+            <h1>Web Application Development</h1>
+            <h2 class="mt-8">Hello, I'm a Full stack Web Developer</h2>
+          </div>
+          <button
+            class="py-3 rounded mt-10 w-full transition delay-100 text-primary font-extrabold text-center"
+            id="continue"
+          >
+            <div class="flex text-center mx-auto w-fit">
+              More information
+              <img
+                src="/assets/arrow-right.png"
+                alt="next"
+                width="24"
+                height="24"
+                class="ms-2"
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center w-full mx-auto px-6 lg:w-1/2"
+      >
+        <div
+          class="flex flex-col justify-center h-screen w-full snap-center"
+          id="skill"
+        >
+          <div>
+            <h3 class="text-xs">Services</h3>
+            <h4 class="text-primary text-xl mt-1 font-extrabold">Skill-set</h4>
+            <div class="h-1 w-16 bg-primary rounded"></div>
+          </div>
+          <ul class="grid grid-cols-3 gap-4 mt-6">
+            {
+              services.map((service) => (
+                <li class="bg-card w-full rounded py-4 text-center">
+                  <img
+                    src={`/assets/${service.icon}`}
+                    alt={service.icon}
+                    width="24"
+                    height="24"
+                    class="mx-auto"
+                  />
+                  <span class="text-xs font-extrabold text-sub mt-1">
+                    {service.title}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="flex flex-col justify-center h-screen w-full snap-center">
+          <h3 class="text-xs">Projects</h3>
+          <h4 class="text-primary text-xl mt-1 font-extrabold">Monitait</h4>
+          <div class="h-1 w-16 bg-primary rounded"></div>
+          <div class="mt-6 h-64">
+            <p class="text-xs font-bold text-sub text-justify">
+              Create administrative panels for management and operators,
+              suppliers, and buyers to monitor production so operators can send
+              reports manually and automatically. Suppliers can solve the
+              problem based on the reports. Buyers can view and order products
+              manufactured with features.
+            </p>
+            <span class="text-sub text-xs"
+              >view <a
+                class="underline"
+                target="_blank"
+                href="https://monitait.com">monitait.com</a
+              ></span
+            >
+            <img
+              src="/assets/monitait-phone.png"
+              alt="phone"
+              width="256"
+              class="mx-auto right-0 bottom-0 mt-6"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col justify-center h-screen w-full snap-center">
+          <h3 class="text-xs">Connect with</h3>
+          <h4 class="text-primary text-xl mt-1 font-extrabold">Hassan Ahari</h4>
+          <div class="h-1 w-16 bg-primary rounded"></div>
+          <div class="grid gap-4 mt-6 grid-cols-2 md:grid-cols-4">
+            {
+              contacts.map((contact) => (
+                <a href={contact.link} target="_blank">
+                  <button class="w-full border border-primary">
+                    <div class="w-fit flex items-center justify-center gap-1 text-xs mx-auto">
+                      <img
+                        src={`/assets/${contact.icon}`}
+                        alt={contact.icon}
+                        width="24"
+                        height="24"
+                      />
+                      {contact.title}
+                    </div>
+                  </button>
+                </a>
+              ))
+            }
+          </div>
+          <span class="text-xs text-center font-extrabold mt-6">See you :)</span
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  document.getElementById("continue").addEventListener("click", () => {
+    document
+      .getElementById("content")
+      .scrollTo(0, document.getElementById("skill").scrollHeight);
+  });
+</script>

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ChunkFive';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('/ChunkFive.woff2') format('woff2'),
+    url('/ChunkFive.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BetterWorks';
+  font-display: swap;
+  src: local(''),
+    url('/Betterworks.woff2') format('woff2'),
+    url('/Betterworks.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-display: swap;
+  src: local(''),
+    url('/Gotham.woff2') format('woff2'),
+    url('/Gotham.woff') format('woff');
+}
+
+@layer base {
+  html {
+    font-family: 'Gotham', sans-serif;
+  }
+  h1 {
+    @apply text-sm;
+    font-family: 'BetterWorks';
+  }
+  h2 {
+    @apply text-sm text-sub;
+  }
+  button {
+    @apply hover:opacity-80 rounded p-3;
+  }
+}
