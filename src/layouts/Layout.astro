@@ -12,7 +12,7 @@ import '../base.css'
 <html lang="en" class="bg-natural text-content">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="My complete portfolio" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
@@ -22,3 +22,11 @@ import '../base.css'
 		<slot />
 	</body>
 </html>
+
+<script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+	duration: 1000,
+});
+</script>

@@ -42,4 +42,8 @@
   button {
     @apply hover:opacity-80 rounded p-3;
   }
+
+  .item {
+    @apply flex flex-col justify-center w-full h-screen px-6;
+  }
 }

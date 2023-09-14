@@ -3,13 +3,13 @@ import Layout from "../layouts/Layout.astro";
 
 const contacts = [
   {
-    title: "linkdin",
+    title: "linkedin",
     icon: "in.svg",
     link: "https://www.linkedin.com/in/hassan-soleimaneahary-595154151/",
   },
   { title: "instagram", icon: "instagram.svg", link: "https://www.instagram.com/hassan_ahari/" },
   { title: "github", icon: "github.svg", link: "https://github.com/HassanAhari/" },
-  { title: "watch app", icon: "whatsapp.svg", link: "https://wa.me/989053768057/" },
+  { title: "whatsapp", icon: "whatsapp.svg", link: "https://wa.me/989053768057/" },
 ];
 
 const services = [
@@ -31,15 +31,20 @@ const services = [
       class="fixed top-0 left-0 right-0 flex items-center justify-center h-16 bg-natural z-10"
     >
       <img src="/logo.png" width="96" height="54" alt="ahari" />
+      <a href="/hassan-ahari.pdf" download="hassan-ahari.pdf" class="absolute right-2">
+        <button>
+          <img src="/assets/download.png" alt="download" width="24" height="24">
+        </button>
+      </a>
     </div>
-    <div
-      class="snap-y snap-mandatory overflow-scroll h-screen scroll-smooth"
-      id="content"
-    >
+    <div>
       <div
-        class="flex flex-col h-screen justify-center items-center snap-center"
+        class="mx-auto px-6 lg:w-1/2"
       >
-        <div>
+        <div
+          class="item"
+          data-aos="zoom-in"
+        >
           <div class="text-center">
             <h1>Web Application Development</h1>
             <h2 class="mt-8">Hello, I'm a Full stack Web Developer</h2>
@@ -60,13 +65,10 @@ const services = [
             </div>
           </button>
         </div>
-      </div>
-      <div
-        class="flex flex-col justify-center items-center w-full mx-auto px-6 lg:w-1/2"
-      >
         <div
-          class="flex flex-col justify-center h-screen w-full snap-center"
+          class="item"
           id="skill"
+          data-aos="zoom-in"
         >
           <div>
             <h3 class="text-xs">Services</h3>
@@ -92,7 +94,7 @@ const services = [
             }
           </ul>
         </div>
-        <div class="flex flex-col justify-center h-screen w-full snap-center">
+        <div id="monitait" class="item" data-aos="zoom-in">
           <h3 class="text-xs">Projects</h3>
           <h4 class="text-primary text-xl mt-1 font-extrabold">Monitait</h4>
           <div class="h-1 w-16 bg-primary rounded"></div>
@@ -119,7 +121,7 @@ const services = [
             />
           </div>
         </div>
-        <div class="flex flex-col justify-center h-screen w-full snap-center">
+        <div id="contact" class="item" data-aos="zoom-in">
           <h3 class="text-xs">Connect with</h3>
           <h4 class="text-primary text-xl mt-1 font-extrabold">Hassan Ahari</h4>
           <div class="h-1 w-16 bg-primary rounded"></div>
@@ -151,9 +153,20 @@ const services = [
 </Layout>
 
 <script>
+  // var flag = null
+  // window.addEventListener("scroll", e => {
+  //   var top = document.documentElement.scrollTop
+  //   var items = document.getElementsByClassName("item")
+  //   for (let item of items) {
+  //     if (Math.abs(item.offsetTop - top) < 300 && !flag) {
+  //       window.scrollTo({top: item.offsetTop, behavior: "smooth"})
+  //       flag = item.id
+  //     } else if (flag === item.id && Math.abs(item.offsetTop - top) > 300) {
+  //       flag = null
+  //     }
+  //   }
+  // })
   document.getElementById("continue").addEventListener("click", () => {
-    document
-      .getElementById("content")
-      .scrollTo(0, document.getElementById("skill").scrollHeight);
-  });
+    window.scrollTo({top: document.getElementById("skill").offsetTop, behavior: "smooth"})
+  })
 </script>

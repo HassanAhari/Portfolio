@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/ceviche-one": "^5.0.8",
+    "aos": "^3.0.0-beta.6",
     "astro": "^3.0.12",
     "tailwindcss": "^3.3.3"
   }
